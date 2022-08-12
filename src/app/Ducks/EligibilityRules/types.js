@@ -1,0 +1,3 @@
+export const GET_ELIGIBILITY_RULES = 'eligibilityRules/GET_ELIGIBILITY_RULES';
+export const GET_SELECTED_ELIGIBILITY_RULE =
+  'eligibilityRules/GET_SELECTED_ELIGIBILITY_RULE';

@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  labels:
+    application: gdf-viewer-ui
+  name: gdf-viewer-ui-pipeline
+spec:
+  source:
+    contextDir: ./
+    sourceSecret:
+      name: bitbucketsecret
+    git:
+      ref: 'master'
+      uri: git@gitlab.healthpartners.com:cornerstone/gdf/gdf-viewer-ui.git
+    type: Git
+  strategy:
+    env:
+      - name: BUILD_CONTEXT_DIR
+        value: ./
+    jenkinsPipelineStrategy:
+      jenkinsfilePath: Jenkinsfile
+    type: JenkinsPipeline
